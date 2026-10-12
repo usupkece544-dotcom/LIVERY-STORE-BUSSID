@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Livery Store BUSSID</title>
+<style>
+:root{--bg:#0b1020;--panel:#131b2e;--panel2:#1a2540;--text:#f4f7ff;--muted:#aeb9d0;--red:#ef4444;--line:#2a3652;--green:#22c55e}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#101a32 0,#0b1020 360px);color:var(--text)}
+header{position:sticky;top:0;z-index:5;background:#0b1020eF;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.wrap{max-width:1100px;margin:auto;padding:16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#ef4444,#991b1b);display:grid;place-items:center;font-size:22px}
+button,.btn{border:0;border-radius:12px;padding:11px 14px;background:var(--red);color:white;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}button.secondary,.btn.secondary{background:var(--panel2);border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed}
+.hero{padding:34px 0 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}.eyebrow{color:#fca5a5;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:1.5px}.hero h1{font-size:clamp(32px,5vw,56px);line-height:1.04;margin:10px 0}.hero p{color:var(--muted);max-width:560px;line-height:1.6}.hero-card{border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#1b2946,#11182a);padding:22px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between}.hero-card .bus{font-size:64px}.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{border:1px solid var(--line);background:#121b2d;padding:7px 10px;border-radius:999px;font-size:12px;color:#d8e1f4}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:22px 0 14px}.section-head h2{margin:0;font-size:24px}.muted{color:var(--muted);font-size:14px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.filters input,.filters select,.field input,.field select,.field textarea{width:100%;padding:12px;border-radius:11px;background:#0d1527;color:var(--text);border:1px solid var(--line);font:inherit}.filters input{flex:1;min-width:180px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.product{border:1px solid var(--line);background:var(--panel);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}.product-img{height:170px;background:linear-gradient(135deg,#263656,#10182a);display:grid;place-items:center;position:relative;color:#9fb0cf}.product-img img{width:100%;height:100%;object-fit:cover}.product-img .placeholder{font-size:45px}.product-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.product-body h3{margin:0;font-size:17px}.price{font-size:20px;font-weight:900}.product-foot{display:flex;gap:8px;margin-top:auto}.product-foot button{flex:1}.tag{font-size:11px;color:#fecaca;background:#451a1a;padding:5px 8px;border-radius:8px;width:max-content}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}.panel{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:16px}.panel h3{margin:0 0 12px}.cart-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.cart-row:last-child{border:0}.qty{display:flex;gap:7px;align-items:center;margin-top:7px}.qty button{padding:4px 9px;border-radius:8px}.total{display:flex;justify-content:space-between;font-weight:900;font-size:19px;margin:14px 0}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:#dbe4f6}.note{font-size:12px;line-height:1.5;color:var(--muted)}.pay-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pay-options label{border:1px solid var(--line);border-radius:12px;padding:11px;cursor:pointer}.pay-options input{accent-color:var(--red)}.empty{padding:24px 10px;text-align:center;color:var(--muted)}.hidden{display:none!important}footer{margin-top:38px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;padding:22px 0}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#f4f7ff;color:#111827;padding:12px 16px;border-radius:12px;font-weight:700;box-shadow:0 10px 40px #0008;z-index:20;max-width:90vw}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:25px}.hero-card{min-height:135px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}.product-img{height:135px}.wrap{padding:13px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.product-img{height:180px}.nav .brand span:last-child{font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand"><div class="logo">🚌</div><span id="storeName">LIVERY STORE</span></div><button class="secondary" onclick="document.querySelector('#keranjang').scrollIntoView({behavior:'smooth'})">🛒 Keranjang <span id="cartCount">0</span></button></div></header>
+<main class="wrap">
+<section class="hero">
+<div><div class="eyebrow">Khusus BUSSID</div><h1>Upgrade tampilan<br>bus kamu.</h1><p>Pilih livery favoritmu, cek detail produk, lalu checkout dengan metode pembayaran yang tersedia. Desain asli akan ditambahkan oleh admin toko.</p><div class="pills"><span class="pill">BUSSID v4.2</span><span class="pill">v4.3.4</span><span class="pill">v4.4.1</span><span class="pill">Katalog digital</span></div></div>
+<div class="hero-card"><div class="bus">🚌</div><div><strong>Desain keren, koleksi sendiri.</strong><div class="muted">Contoh unit menyusul segera!</div></div></div>
+</section>
+<section id="katalog">
+<div class="section-head"><div><h2>Katalog Livery</h2><div class="muted">Pilih produk yang ingin dibeli.</div></div></div>
+<div class="filters"><input id="search" placeholder="Cari produk..." oninput="renderProducts()"><select id="sort" onchange="renderProducts()" style="max-width:190px"><option value="default">Urutkan produk</option><option value="low">Harga termurah</option><option value="high">Harga termahal</option></select></div>
+<div id="productGrid" class="grid"></div>
+</section>
+<section id="keranjang" style="margin-top:34px">
+<div class="section-head"><div><h2>Keranjang & Checkout</h2><div class="muted">Pesanan akan direkap sebelum dikirim.</div></div></div>
+<div class="layout">
+<div class="panel"><h3>🛒 Produk pilihan</h3><div id="cartItems"></div><div class="total"><span>Total</span><span id="total">Rp0</span></div><button class="secondary" onclick="clearCart()">Kosongkan keranjang</button></div>
+<div class="panel"><h3>📦 Data pemesan</h3>
+<div class="field"><label>Nama pembeli</label><input id="buyerName" placeholder="Nama kamu"></div>
+<div class="field"><label>Nomor WhatsApp pembeli</label><input id="buyerPhone" inputmode="tel" placeholder="08xxxxxxxxxx"></div>
+<div class="field"><label>Metode pembayaran</label><div class="pay-options">
+<label><input type="radio" name="payment" value="DANA" checked> DANA</label>
+<label><input type="radio" name="payment" value="Transfer BCA"> Transfer BCA</label>
+</div></div>
+<div class="field"><label>Catatan pesanan (opsional)</label><textarea id="buyerNote" rows="2" placeholder="Contoh: versi BUSSID yang dipakai"></textarea></div>
+<button style="width:100%" onclick="checkout()">Buat pesanan</button>
+<p class="note">Demo awal: tombol checkout akan menyiapkan ringkasan pesanan. Nomor admin, detail rekening, bukti pembayaran, dan verifikasi otomatis belum terhubung. Jangan mengirim uang sebelum detail pembayaran resmi diisi admin.</p>
+</div></div>
+</section>
+<section id="admin" style="margin-top:28px">
+<div class="panel"><h3>⚙️ Pengaturan toko (demo lokal)</h3><p class="note">Gunakan bagian ini untuk mengganti nama toko, nomor WhatsApp admin, dan detail pembayaran. Perubahan tersimpan di browser perangkat ini saja, belum tersinkron ke pembeli lain.</p>
+<div class="field"><label>Nama toko</label><input id="settingStore" placeholder="LIVERY STORE"></div>
+<div class="field"><label>Nomor WhatsApp admin (format internasional, contoh 62812...)</label><input id="settingWA" placeholder="Masukkan nomor admin"></div>
+<div class="field"><label>Nomor/ID DANA</label><input id="settingDana" placeholder="Isi setelah siap"></div>
+<div class="field"><label>Nama pemilik & nomor rekening BCA</label><input id="settingBca" placeholder="Nama pemilik - nomor rekening"></div>
+<div class="field"><label>Catatan/link file produk (opsional)</label><input id="settingFiles" placeholder="Link folder file yang aman, jika sudah tersedia"></div>
+<button onclick="saveSettings()">Simpan pengaturan di perangkat</button>
+</div></section>
+<footer>© <span id="year"></span> Livery Store BUSSID · Katalog awal dapat disesuaikan. Produk contoh belum merupakan file livery yang siap dijual.</footer>
+</main>
+<div id="toast" class="toast hidden"></div>
+<script>
+const defaultProducts=[
+{id:1,name:"Livery Polos",price:5000,desc:"Livery polos untuk BUSSID.",img:"",label:"Produk digital"},
+{id:2,name:"Livery + Stiker",price:10000,desc:"Livery dengan tambahan stiker.",img:"",label:"Pilihan populer"},
+{id:3,name:"Livery + Stiker + Julukan",price:15000,desc:"Paket livery, stiker, dan julukan.",img:"",label:"Paket lengkap"},
+{id:4,name:"Julukan MAJESTY",price:5000,desc:"Produk julukan MAJESTY.",img:"",label:"Tambahan"},
+{id:5,name:"Kepet + Livery",price:10000,desc:"Paket kepet dan livery.",img:"",label:"Paket"},
+{id:6,name:"Full Pack",price:45000,desc:"Paket lengkap sesuai detail dari admin.",img:"",label:"Full Pack"}
+];
+let products=defaultProducts;
+let cart=JSON.parse(localStorage.getItem("ls_cart")||"{}");
+let settings=JSON.parse(localStorage.getItem("ls_settings")||"{}");
+const money=n=>"Rp"+Number(n).toLocaleString("id-ID");
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.remove("hidden");setTimeout(()=>el.classList.add("hidden"),3000)}
+function renderProducts(){let q=(document.getElementById("search").value||"").toLowerCase();let arr=products.filter(p=>(p.name+" "+p.desc).toLowerCase().includes(q));let s=document.getElementById("sort").value;if(s==="low")arr.sort((a,b)=>a.price-b.price);if(s==="high")arr.sort((a,b)=>b.price-a.price);document.getElementById("productGrid").innerHTML=arr.map(p=>`<article class="product"><div class="product-img">${p.img?`<img src="${p.img}" alt="${p.name}">`:`<div class="placeholder">🚌</div>`}</div><div class="product-body"><span class="tag">${p.label}</span><h3>${p.name}</h3><div class="muted">${p.desc}</div><div class="price">${money(p.price)}</div><div class="product-foot"><button onclick="addToCart(${p.id})">＋ Tambah</button></div></div></article>`).join("")||'<div class="empty">Produk tidak ditemukan.</div>'}
+function addToCart(id){cart[id]=(cart[id]||0)+1;saveCart();renderCart();toast("Produk ditambahkan ke keranjang.")}
+function saveCart(){localStorage.setItem("ls_cart",JSON.stringify(cart))}
+function renderCart(){let items=products.filter(p=>cart[p.id]);let html=items.map(p=>`<div class="cart-row"><div><strong>${p.name}</strong><div class="muted">${money(p.price)} / item</div><div class="qty"><button class="secondary" onclick="changeQty(${p.id},-1)">−</button><span>${cart[p.id]}</span><button class="secondary" onclick="changeQty(${p.id},1)">＋</button></div></div><strong>${money(p.price*cart[p.id])}</strong></div>`).join("");document.getElementById("cartItems").innerHTML=html||'<div class="empty">Keranjang masih kosong.</div>';let total=items.reduce((s,p)=>s+p.price*cart[p.id],0);document.getElementById("total").textContent=money(total);document.getElementById("cartCount").textContent=items.reduce((s,p)=>s+cart[p.id],0)}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];saveCart();renderCart()}
+function clearCart(){cart={};saveCart();renderCart();toast("Keranjang dikosongkan.")}
+function saveSettings(){settings={store:document.getElementById("settingStore").value.trim(),wa:document.getElementById("settingWA").value.trim(),dana:document.getElementById("settingDana").value.trim(),bca:document.getElementById("settingBca").value.trim(),files:document.getElementById("settingFiles").value.trim()};localStorage.setItem("ls_settings",JSON.stringify(settings));if(settings.store)document.getElementById("storeName").textContent=settings.store;toast("Pengaturan disimpan di browser ini.")}
+function loadSettings(){document.getElementById("settingStore").value=settings.store||"LIVERY STORE";document.getElementById("settingWA").value=settings.wa||"";document.getElementById("settingDana").value=settings.dana||"";document.getElementById("settingBca").value=settings.bca||"";document.getElementById("settingFiles").value=settings.files||"";if(settings.store)document.getElementById("storeName").textContent=settings.store}
+function checkout(){let items=products.filter(p=>cart[p.id]);if(!items.length){toast("Pilih produk terlebih dahulu.");return}let name=document.getElementById("buyerName").value.trim(),phone=document.getElementById("buyerPhone").value.trim();if(!name||!phone){toast("Isi nama dan nomor WhatsApp terlebih dahulu.");return}let pay=document.querySelector('input[name="payment"]:checked').value;let total=items.reduce((s,p)=>s+p.price*cart[p.id],0);let msg=`PESANAN LIVERY STORE BUSSID%0A`+encodeURIComponent(`Nama: ${name}\nWA pembeli: ${phone}\nMetode pembayaran: ${pay}\n\nPesanan:\n`+items.map(p=>`${p.name} x${cart[p.id]} = ${money(p.price*cart[p.id])}`).join("\n")+`\n\nTOTAL: ${money(total)}\nCatatan: ${document.getElementById("buyerNote").value.trim()||"-"}\n\nMohon kirim instruksi pembayaran dan konfirmasi pesanan.`);let summary=`Ringkasan pesanan:\n${items.map(p=>`${p.name} x${cart[p.id]} = ${money(p.price*cart[p.id])}`).join("\n")}\nTotal: ${money(total)}\nMetode: ${pay}`;if(settings.wa){let wa=settings.wa.replace(/\D/g,"");window.open(`https://wa.me/${wa}?text=${encodeURIComponent(`PESANAN LIVERY STORE BUSSID\nNama: ${name}\nWA pembeli: ${phone}\nMetode pembayaran: ${pay}\n\nPesanan:\n${items.map(p=>`${p.name} x${cart[p.id]} = ${money(p.price*cart[p.id])}`).join("\n")}\n\nTOTAL: ${money(total)}\nCatatan: ${document.getElementById("buyerNote").value.trim()||"-"}\n\nMohon kirim instruksi pembayaran dan konfirmasi pesanan.`)}`,"_blank");toast("Ringkasan pesanan dibuka di WhatsApp admin.");}else{alert(summary+"\n\nNomor WhatsApp admin belum diatur. Masukkan nomor admin di Pengaturan toko.");} }
+document.getElementById("year").textContent=new Date().getFullYear();renderProducts();renderCart();loadSettings();
+</script>
+</body>
+</html>
